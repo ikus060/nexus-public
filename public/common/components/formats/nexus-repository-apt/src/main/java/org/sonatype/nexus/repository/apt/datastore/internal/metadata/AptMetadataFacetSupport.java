@@ -343,6 +343,8 @@ public abstract class AptMetadataFacetSupport
         metadata.gzSize(), AptMimeTypes.GZIP, md5Builder, sha256Builder);
     putPackageIndexWithSignatures(aptFacet, distribution, component, arch, BZ2, metadata.bzSupplier(),
         metadata.bzSize(), AptMimeTypes.BZIP, md5Builder, sha256Builder);
+    putPackageIndexWithSignatures(aptFacet, distribution, component, arch, BZ2, metadata.bzSupplier(),
+        metadata.xzSize(), AptMimeTypes.XZ, md5Builder, sha256Builder);
   }
 
   /**
