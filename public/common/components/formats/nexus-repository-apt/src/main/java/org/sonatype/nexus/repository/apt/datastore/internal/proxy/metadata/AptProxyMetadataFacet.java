@@ -725,7 +725,7 @@ public class AptProxyMetadataFacet
     }
 
     // Build and store Release files with actual components
-    String releaseFile = buildReleaseFile(distribution, components, architectures,
+    String releaseFile = buildReleaseFile(getRepository().getName(), distribution, components, architectures,
         md5Builder.toString(), sha256Builder.toString());
 
     log.info("Generated merged metadata for distribution {} with components: {}, architectures: {}",
@@ -812,7 +812,7 @@ public class AptProxyMetadataFacet
       return null;
     }
 
-    String releaseFile = buildReleaseFile(distribution, components, architectures,
+    String releaseFile = buildReleaseFile(getRepository().getName(), distribution, components, architectures,
         md5Builder.toString(), sha256Builder.toString());
 
     log.info("Generated metadata from cached packages for distribution {} with components: {}, architectures: {}",

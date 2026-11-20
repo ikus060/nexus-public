@@ -250,6 +250,7 @@ public abstract class AptMetadataFacetSupport
    * @return Release file content as string
    */
   protected String buildReleaseFile(
+      final String label,
       final String distribution,
       final Collection<String> components,
       final Collection<String> architectures,
@@ -258,6 +259,7 @@ public abstract class AptMetadataFacetSupport
   {
     String date = DateFormatUtils.format(new Date(), PATTERN_RFC1123, TimeZone.getTimeZone("GMT"));
     Paragraph p = new Paragraph(Arrays.asList(
+        new ControlFile.ControlField("Label", label),
         new ControlFile.ControlField("Suite", distribution),
         new ControlFile.ControlField("Codename", distribution),
         new ControlFile.ControlField("Components", String.join(StringUtils.SPACE, components)),

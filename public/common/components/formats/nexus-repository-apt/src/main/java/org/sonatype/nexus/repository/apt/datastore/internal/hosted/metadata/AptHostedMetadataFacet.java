@@ -119,6 +119,7 @@ public class AptHostedMetadataFacet
         Set<String> currentComponents = distEntry.getValue().keySet();
         if (!currentArchitectures.isEmpty()) {
           releaseFile = buildReleaseFile(
+              getRepository().getName(),   // used as Label
               distribution,
               currentComponents,
               currentArchitectures,
